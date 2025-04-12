@@ -1,0 +1,657 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Updated primary color to a deeper blue */
+    --primary: 210 100% 30%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Updated secondary color to an energetic orange */
+    --secondary: 30 95% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Updated accent color to a vibrant teal */
+    --accent: 175 80% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Added an energetic green color */
+    --energy-green: 145 70% 40%;
+    --energy-green-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+    font-size: 16px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Responsive Typography - improved for better readability */
+  h1 {
+    font-size: clamp(1.75rem, 5vw, 4rem);
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: clamp(1.375rem, 4vw, 2.5rem);
+    line-height: 1.3;
+  }
+  
+  h3 {
+    font-size: clamp(1.125rem, 3vw, 1.75rem);
+    line-height: 1.4;
+  }
+  
+  p {
+    font-size: clamp(0.9375rem, 2vw, 1.125rem);
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+  
+  .energy-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-[#38bdf8];
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .btn-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-md relative overflow-hidden;
+  }
+  
+  .btn-hover::after {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full bg-white opacity-0 transition-opacity duration-300;
+  }
+  
+  .btn-hover:hover::after {
+    @apply opacity-20;
+  }
+  
+  .parallax-container {
+    @apply relative overflow-hidden;
+  }
+  
+  .parallax-bg {
+    @apply absolute w-full h-[120%] top-0 left-0 bg-no-repeat bg-cover;
+    transform: translateZ(-1px) scale(2);
+  }
+
+  .circuit-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232563eb' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  
+  .section-padding {
+    @apply py-8 sm:py-12 md:py-16 lg:py-20 px-3 sm:px-6 md:px-8 lg:px-16;
+  }
+  
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Energy-focused animated elements */
+  .energy-pulse {
+    @apply relative;
+  }
+  
+  .energy-pulse::after {
+    content: '';
+    @apply absolute inset-0 rounded-full bg-secondary opacity-70;
+    animation: pulse 2s infinite;
+  }
+  
+  .grid-line {
+    @apply absolute bg-primary/10;
+  }
+  
+  .grid-line-h {
+    @apply h-px w-full;
+  }
+  
+  .grid-line-v {
+    @apply w-px h-full;
+  }
+  
+  .power-node {
+    @apply absolute w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-secondary;
+    animation: blink 3s infinite;
+  }
+  
+  .connector-line {
+    @apply absolute bg-primary/20;
+    transform-origin: left center;
+    animation: grow 5s infinite;
+  }
+  
+  /* Responsive helpers */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  /* Responsive typography utilities */
+  .fluid-text-xs {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+  
+  .fluid-text-sm {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+  
+  .fluid-text-base {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+  }
+  
+  .fluid-text-lg {
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  }
+  
+  .fluid-text-xl {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+  }
+  
+  .fluid-text-2xl {
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
+  }
+  
+  /* Add enhanced responsive classes */
+  .section-padding {
+    @apply py-8 sm:py-12 md:py-16 lg:py-20 px-3 sm:px-6 md:px-8 lg:px-16;
+  }
+  
+  /* Improve responsive spacing for small screens */
+  .responsive-gap-xs {
+    gap: clamp(0.5rem, 1vw, 1rem);
+  }
+  
+  .responsive-gap-sm {
+    gap: clamp(0.75rem, 1.5vw, 1.5rem);
+  }
+  
+  .responsive-gap {
+    gap: clamp(1rem, 2vw, 2rem);
+  }
+  
+  .responsive-p-xs {
+    padding: clamp(0.5rem, 1.5vw, 1rem);
+  }
+  
+  .responsive-p-sm {
+    padding: clamp(0.75rem, 2vw, 1.5rem);
+  }
+  
+  .responsive-p {
+    padding: clamp(1rem, 3vw, 2rem);
+  }
+  
+  .responsive-py-xs {
+    padding-top: clamp(0.5rem, 2vw, 1.5rem);
+    padding-bottom: clamp(0.5rem, 2vw, 1.5rem);
+  }
+  
+  .responsive-py-sm {
+    padding-top: clamp(0.75rem, 3vw, 2rem);
+    padding-bottom: clamp(0.75rem, 3vw, 2rem);
+  }
+  
+  .responsive-py {
+    padding-top: clamp(1rem, 5vw, 3rem);
+    padding-bottom: clamp(1rem, 5vw, 3rem);
+  }
+  
+  .responsive-px-xs {
+    padding-left: clamp(0.5rem, 1.5vw, 1rem);
+    padding-right: clamp(0.5rem, 1.5vw, 1rem);
+  }
+  
+  .responsive-px-sm {
+    padding-left: clamp(0.75rem, 2vw, 1.5rem);
+    padding-right: clamp(0.75rem, 2vw, 1.5rem);
+  }
+  
+  .responsive-px {
+    padding-left: clamp(1rem, 3vw, 2rem);
+    padding-right: clamp(1rem, 3vw, 2rem);
+  }
+  
+  /* Enhanced text sizing for extra small screens */
+  .fluid-text-2xs {
+    font-size: clamp(0.6875rem, 1.5vw, 0.75rem);
+  }
+  
+  .fluid-text-xs {
+    font-size: clamp(0.75rem, 1.75vw, 0.875rem);
+  }
+  
+  .fluid-text-sm {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+  
+  .fluid-text-base {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+  }
+  
+  .fluid-text-lg {
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  }
+  
+  .fluid-text-xl {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+  }
+  
+  .fluid-text-2xl {
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(var(--secondary), 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(var(--secondary), 0);
+  }
+}
+
+/* New energy-themed animations */
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-cursor {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.8s ease forwards;
+}
+
+.animate-ripple {
+  animation: ripple 1.5s infinite;
+}
+
+.animate-typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid;
+  animation: typewriter 3.5s steps(40, end) forwards, blink-cursor 0.75s step-end infinite;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-800 {
+  animation-delay: 800ms;
+}
+
+/* Energy grid background */
+.energy-grid-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.5) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.5) 1px, transparent 1px);
+  animation: grid-move 15s linear infinite;
+}
+
+@keyframes grid-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+/* Responsive spacing helpers */
+.responsive-gap {
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.responsive-p {
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.responsive-py {
+  padding-top: clamp(1rem, 5vw, 3rem);
+  padding-bottom: clamp(1rem, 5vw, 3rem);
+}
+
+.responsive-px {
+  padding-left: clamp(1rem, 3vw, 2rem);
+  padding-right: clamp(1rem, 3vw, 2rem);
+}
+
+/* Ensure content readability on mobile */
+@media (max-width: 640px) {
+  .readable-line-height {
+    line-height: 1.6;
+  }
+  
+  .mobile-stack {
+    flex-direction: column;
+  }
+  
+  .mobile-full-width {
+    width: 100%;
+  }
+  
+  /* Prevent text overflow on small screens */
+  .prevent-overflow {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* Scale down icons on small screens */
+  .scale-icon {
+    transform: scale(0.85);
+  }
+}
+
+/* Progressive enhancement for larger screens */
+@media (min-width: 1024px) {
+  .desktop-hover-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .desktop-hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Ensure tap targets meet accessibility standards */
+@media (max-width: 768px) {
+  .tap-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  button, 
+  a, 
+  input, 
+  select, 
+  textarea {
+    min-height: 44px;
+  }
+  
+  input[type="checkbox"],
+  input[type="radio"] {
+    min-height: 22px;
+    min-width: 22px;
+  }
+}
+
+/* Extra responsive helper classes for smallest screens (like iPhone SE) */
+@media (max-width: 375px) {
+  .xs-stack {
+    flex-direction: column !important;
+  }
+  
+  .xs-text-center {
+    text-align: center !important;
+  }
+  
+  .xs-text-sm {
+    font-size: 0.875rem !important;
+  }
+  
+  .xs-text-xs {
+    font-size: 0.75rem !important;  
+  }
+  
+  .xs-p-2 {
+    padding: 0.5rem !important;
+  }
+  
+  .xs-gap-2 {
+    gap: 0.5rem !important;
+  }
+  
+  .xs-my-2 {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .xs-hidden {
+    display: none !important;
+  }
+  
+  .xs-block {
+    display: block !important;
+  }
+  
+  .xs-max-w-full {
+    max-width: 100% !important;
+  }
+}
+
+/* Add smaller screen (extra small) breakpoints */
+@media (min-width: 375px) {
+  .xs\:text-base {
+    font-size: 1rem !important;
+  }
+  
+  .xs\:text-sm {
+    font-size: 0.875rem !important;
+  }
+  
+  .xs\:text-3xl {
+    font-size: 1.875rem !important;
+  }
+  
+  .xs\:flex-row {
+    flex-direction: row !important;
+  }
+  
+  .xs\:w-auto {
+    width: auto !important;
+  }
+  
+  .xs\:gap-4 {
+    gap: 1rem !important;
+  }
+  
+  .xs\:gap-6 {
+    gap: 1.5rem !important;
+  }
+  
+  .xs\:mb-2 {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .xs\:mt-10 {
+    margin-top: 2.5rem !important;
+  }
+  
+  .xs\:h-5 {
+    height: 1.25rem !important;
+  }
+  
+  .xs\:w-5 {
+    width: 1.25rem !important;
+  }
+  
+  .xs\:h-6 {
+    height: 1.5rem !important;
+  }
+  
+  .xs\:w-6 {
+    width: 1.5rem !important;
+  }
+  
+  .xs\:h-10 {
+    height: 2.5rem !important;
+  }
+  
+  .xs\:w-10 {
+    width: 2.5rem !important;
+  }
+  
+  .xs\:px-5 {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+  
+  .xs\:py-3 {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+  
+  .xs\:bottom-5 {
+    bottom: 1.25rem !important;
+  }
+}
+
+/* Improve typewriter animation for small screens */
+@media (max-width: 375px) {
+  .animate-typewriter {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+}
