@@ -142,8 +142,7 @@ const Hero = () => {
           
           {/* Better spacing and font sizing for paragraph */}
           <p className="text-sm xs:text-base sm:text-lg md:text-xl max-w-[95%] xs:max-w-[90%] sm:max-w-2xl mb-6 sm:mb-8 text-gray-700 animation-delay-400 animate-fadeInUp">
-            Connecting industry experts, providing essential services, and facilitating 
-            the energy ecosystem with innovative solutions.
+          We are the Pioneers in serving your interests in the most advanced way ever. Making the platform a one stop destination for all your Project Development needs.
           </p>
           
           {/* Improved button layout for small screens */}

@@ -30,21 +30,27 @@ const Header = () => {
   return (
     <header 
       className={cn(
-        "fixed top-0 left-0 w-full z-50 transition-all duration-300 py-2 px-2 xs:px-3 sm:py-3 sm:px-4 md:px-8 lg:px-16",
-        isScrolled ? "bg-white/95 backdrop-blur-sm shadow-md" : "bg-transparent"
+        "fixed bg-gray-900/95 top-0 left-0 w-full z-50 transition-all duration-300 py-2 px-2 xs:px-3 sm:py-3 sm:px-4 md:px-8 lg:px-16",
+        isScrolled ? "bg-gray-800/95 backdrop-blur-sm shadow-md" : "bg-gray-900/90 backdrop-blur-sm"
       )}
     >
-      <div className="flex items-center justify-between max-w-7xl mx-auto">
-        <div className="flex items-center">
-          {/* Logo container with optimized size and curved edges */}
-          <div className="h-10 xs:h-11 sm:h-12 md:h-13 bg-white/90 backdrop-blur-md rounded-xl p-1.5 flex items-center justify-center">
-            <img 
-              src="/lovable-uploads/66052c55-1ccf-4329-9fb7-5441b5b289a3.png" 
-              alt="PowerPact Logo" 
-              className="h-full w-auto object-contain max-h-[34px] xs:max-h-[38px] sm:max-h-[42px] md:max-h-[46px] rounded-md"
-            />
-          </div>
-        </div>
+
+
+     <div className="flex items-center justify-between max-w-10xl mx-auto">
+  <div className="flex items-center">
+    {/* Logo container with fully rounded shape and increased size */}
+    <div className="h-[100px] lg:h-[120px] drop-shadow-md bg-transparent rounded-full p-2 flex items-center justify-center">
+      <img 
+        src="/logo/b3b956da-7b11-489c-83ff-67c384ac9d7a_2-removebg-preview.png" 
+        alt="PowerPact Logo" 
+        className="h-[125px] lg:h-[195px] w-auto object-contain filter drop-shadow-lg"
+        style={{
+          filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.3))"
+        }}
+      />
+    </div>
+  </div>
+
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 lg:space-x-8">
@@ -52,7 +58,7 @@ const Header = () => {
             <button
               key={item}
               onClick={() => scrollToSection(item)}
-              className="text-foreground hover:text-primary transition-colors capitalize px-1 py-2"
+              className="text-gray-100 hover:text-white transition-colors capitalize px-1 py-2 font-medium"
             >
               {item}
             </button>
@@ -70,7 +76,7 @@ const Header = () => {
         
         {/* Mobile Menu Button - Increased tap area */}
         <button 
-          className="md:hidden text-foreground p-1 xs:p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
+          className="md:hidden text-foreground p-1 xs:p-2 min-w-[44px] min-h-[44px] text-gray-100 flex items-center justify-center"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >

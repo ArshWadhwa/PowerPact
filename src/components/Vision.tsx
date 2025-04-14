@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Target, Flag, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -43,40 +42,40 @@ const Vision = () => {
       icon: <Target className="h-6 w-6 sm:h-8 sm:w-8" />,
       iconBg: "bg-primary",
       title: "Vision",
-      content: "To create a seamlessly interconnected energy ecosystem where demand meets supply efficiently, powered by expertise and innovation."
+      content: "Our vision drives us to transform the industry practices in a way that cuts short the project development duration helping the developers setup projects much faster and Business much quicker."
     },
     {
       id: "mission",
       icon: <Flag className="h-6 w-6 sm:h-8 sm:w-8" />,
       iconBg: "bg-secondary",
       title: "Mission",
-      content: "To facilitate strategic connections between energy stakeholders, provide expert advisory services, and drive sustainable growth in the energy sector."
+      content: "To become the most trusted & reliable energy solutions platform that empowers communities and businesses with quick and sorted access to information and services on demand."
     },
     {
       id: "purpose",
       icon: <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8" />,
       iconBg: "bg-accent",
       title: "Purpose",
-      content: "To contribute to a more efficient, sustainable, and innovative energy landscape that benefits all stakeholders and supports long-term industry growth."
+      content: "Our purpose falls within the core of the industry we thrive in, strengthening and extending the longevity and profitability of the industry which affects us both directly and indirectly."
     }
   ];
 
   const timelineItems = [
     {
-      title: "Industry Expertise",
-      content: "Our team brings decades of experience in the energy sector, with deep knowledge of market dynamics, regulatory frameworks, and industry trends."
+      title: " Industry Knowledge",
+      content: "We bring together professionals with hands-on experience in power demand, supply, and project facilitation, giving you access to practical insights and reliable support throughout your project journey."
     },
     {
-      title: "Strategic Partnerships",
-      content: "We have cultivated strong relationships with key stakeholders across the energy value chain, creating a robust network that benefits our clients."
+      title: "Collaborative Network",
+      content: "Power Pact works closely with a trusted network of stakeholders—ranging from land providers to power suppliers—to make the development process smoother and better connected for all involved."
     },
     {
-      title: "Innovative Solutions",
-      content: "Our approach combines traditional industry knowledge with cutting-edge methodologies to address complex challenges in innovative ways."
+      title: "Practical Solutions",
+      content: "From acquiring land to allocating power suppliers, our platform simplifies each step with focused services, helping you manage your project requirements more efficiently."
     },
     {
-      title: "Client Success",
-      content: "We measure our success by the achievements of our clients, focusing on delivering tangible results and long-term value."
+      title: "Client-Centric Approach",
+      content: "We aim to support developers and businesses by offering relevant services and timely updates that contribute to faster project execution and informed decision-making."
     }
   ];
 
@@ -120,33 +119,43 @@ const Vision = () => {
             </div>
           </div>
           
+
+
+
           {/* Right side with timeline */}
           <div className="lg:w-1/2 w-full mt-6 lg:mt-0">
-            <div className="relative pl-6 sm:pl-8 animate-on-scroll">
-              {/* Vertical timeline line */}
-              <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent"></div>
-              
-              <div className="space-y-6 sm:space-y-8 md:space-y-12">
-                {timelineItems.map((item, index) => (
-                  <div key={index} className="relative">
-                    {/* Timeline dot */}
-                    <div 
-                      className={`absolute -left-3 sm:-left-4 top-0 w-3 h-3 sm:w-4 sm:h-4 rounded-full ${
-                        index === 0 ? "bg-primary" : 
-                        index === 1 ? "bg-secondary" : 
-                        index === 2 ? "bg-accent" : "bg-primary"
-                      } animate-ripple`} 
-                      style={{ animationDelay: `${index * 0.5}s` }}
-                    ></div>
-                    
-                    <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2 sm:mb-3">{item.title}</h3>
-                    <p className="text-gray-700 text-sm sm:text-base">
-                      {item.content}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+  <div className="relative pl-6 sm:pl-8 animate-on-scroll">
+    {/* Vertical timeline line - now positioned to connect with dots */}
+    <div 
+      className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent"
+      style={{ left: '6px' }} // Adjusted to align with dots
+    ></div>
+    
+    <div className="space-y-6 sm:space-y-8 md:space-y-10"> {/* Reduced space between items */}
+      {timelineItems.map((item, index) => (
+        <div key={index} className="relative pl-4"> {/* Added pl-4 for better text alignment */}
+          {/* Timeline dot - now properly connected to the line */}
+          <div 
+            className={`absolute left-0 top-0 w-3 h-3 sm:w-4 sm:h-4 rounded-full ${
+              index === 0 ? "bg-primary" : 
+              index === 1 ? "bg-secondary" : 
+              index === 2 ? "bg-accent" : "bg-primary"
+            } animate-ripple`}
+            style={{ 
+              transform: 'translateX(-50%)', // Centers the dot on the line
+              top: '0.4em', // Aligns with first line of text
+              animationDelay: `${index * 0.5}s`
+            }}
+          ></div>
+          
+          <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2 sm:mb-3">{item.title}</h3>
+          <p className="text-gray-700 text-sm sm:text-base">
+            {item.content}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
           </div>
         </div>
       </div>

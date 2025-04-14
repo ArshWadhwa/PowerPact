@@ -1,0 +1,36 @@
+
+<svg width="400" height="320" viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="outerArcGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF9CD" />
+      <stop offset="50%" stop-color="#FEC6A1" />
+      <stop offset="100%" stop-color="#FFDEE2" />
+    </linearGradient>
+    <linearGradient id="innerArcGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF719A" />
+      <stop offset="100%" stop-color="#D946EF" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Outer arc -->
+  <path d="M200 50C255.228 50 300 94.7715 300 150H270C270 111.34 238.66 80 200 80V50Z" fill="url(#outerArcGradient)" />
+  <path d="M200 50C144.772 50 100 94.7715 100 150H130C130 111.34 161.34 80 200 80V50Z" fill="url(#outerArcGradient)" />
+
+  <!-- Inner arc -->
+  <path d="M200 80C238.66 80 270 111.34 270 150H200V80Z" fill="url(#innerArcGradient)" />
+  <path d="M200 80C161.34 80 130 111.34 130 150H200V80Z" fill="url(#innerArcGradient)" />
+
+  <!-- Lightning bolt -->
+  <path d="M185 115L175 135H195L165 175L175 150H155L185 115Z" fill="white" filter="url(#glow)" />
+
+  <!-- Logo text -->
+  <text x="200" y="210" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FEF7CD">POWER PACT</text>
+  
+  <!-- Tagline -->
+  <text x="200" y="240" font-family="Arial, sans-serif" font-size="16" font-style="italic" text-anchor="middle" fill="#FEC6A1">Where power supply meets demand</text>
+</svg>

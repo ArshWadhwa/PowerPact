@@ -32,26 +32,26 @@ const About = () => {
   }, []);
 
   const features = [
-    {
-      icon: <Zap className="h-6 w-6 md:h-8 md:w-8" />,
-      title: "Energy Expertise",
-      description: "Deep industry knowledge and experience in power sector dynamics, regulations, and market trends."
-    },
-    {
-      icon: <Users className="h-6 w-6 md:h-8 md:w-8" />,
-      title: "Industry Network",
-      description: "Established connections with key stakeholders across the energy value chain."
-    },
-    {
-      icon: <Activity className="h-6 w-6 md:h-8 md:w-8" />,
-      title: "Innovative Solutions",
-      description: "Cutting-edge approaches to address complex energy sector challenges."
-    },
-    {
-      icon: <Lightbulb className="h-6 w-6 md:h-8 md:w-8" />,
-      title: "Strategic Vision",
-      description: "Forward-thinking strategies that anticipate industry shifts and emerging opportunities."
-    }
+    // {
+    //   icon: <Zap className="h-6 w-6 md:h-8 md:w-8" />,
+    //   title: "C&I Consumer Focus",
+    //   description: "Facilitating connections between commercial & industrial consumers and reliable energy solutions that meet evolving power needs."
+    // },
+    // {
+    //   icon: <Users className="h-6 w-6 md:h-8 md:w-8" />,
+    //   title: "Land Acquisition Support",
+    //   description: "Assisting in identifying and acquiring suitable land for project development, with attention to compliance and location feasibility."
+    // },
+    // {
+    //   icon: <Activity className="h-6 w-6 md:h-8 md:w-8" />,
+    //   title: "Procurement Coordination",
+    //   description: "Providing access to essential resources and vendor networks to support smooth and timely project setup."
+    // },
+    // {
+    //   icon: <Lightbulb className="h-6 w-6 md:h-8 md:w-8" />,
+    //   title: "Regulatory Awareness",
+    //   description: "Keeping stakeholders informed with relevant updates on policies and reforms that impact project planning and execution."
+    // }
   ];
 
   return (
@@ -65,12 +65,12 @@ const About = () => {
             </h2>
             
             <p className="text-gray-700 mb-4 animate-on-scroll text-sm sm:text-base md:text-lg">
-              Power Pact serves as the critical junction point in the energy ecosystem, connecting demand with supply through expert consultancy, strategic partnerships, and innovative solutions.
+            Power Pact is a hands-on service platform that connects the industry experts from various fields to facilitate power demand & supply, land acquisition, project related procurement services to develop Utility Scale RE projects for IPPs and Captive/Group Captive Projects for C&l customers.
             </p>
             
-            <p className="text-gray-700 mb-4 animate-on-scroll text-sm sm:text-base md:text-lg">
+            {/* <p className="text-gray-700 mb-4 animate-on-scroll text-sm sm:text-base md:text-lg">
               We bring together industry experts, service providers, and stakeholders to create a seamless network that addresses the complex challenges of the modern energy landscape.
-            </p>
+            </p> */}
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-6 sm:mt-8">
               {features.map((feature, index) => (

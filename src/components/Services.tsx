@@ -52,43 +52,33 @@ const Services = () => {
   const services = [
     {
       icon: <Network />,
-      title: "Network Building",
-      description: "Connect with industry professionals, stakeholders, and service providers across the energy value chain."
+      title: "C&l Consumer Acquisition",
+      description: "Identifying and onboarding Commercial & Industrial clients for energy solutions or services.."
     },
     {
       icon: <LightbulbIcon />,
-      title: "Strategic Advisory",
-      description: "Expert guidance on navigating complex energy markets and regulatory landscapes."
+      title: "Land Acquisition for Utility and C&l Projects",
+      description: "Securing land for infrastructure development in utility-scale and C&I energy projects."
     },
-    {
-      icon: <BarChart3 />,
-      title: "Market Analysis",
-      description: "In-depth analysis of energy market trends, demand patterns, and supply dynamics."
-    },
+    // {
+    //   icon: <BarChart3 />,
+    //   title: "",
+    //   description: "In-depth analysis of energy market trends, demand patterns, and supply dynamics."
+    // },
     {
       icon: <Building2 />,
-      title: "Project Development",
-      description: "End-to-end support for energy project planning, execution, and management."
+      title: "Resource Procurement for Project Setup",
+      description: "Sourcing essential materials and services required for initiating and executing projects."
     },
     {
       icon: <Shuffle />,
-      title: "Transaction Support",
-      description: "Facilitate energy trading, procurement, and commercial agreements between parties."
+      title: "Power Supplier Allocation",
+      description: "Assigning appropriate energy providers to meet project-specific or client-based power needs."
     },
     {
       icon: <FileText />,
-      title: "Regulatory Compliance",
-      description: "Navigate complex regulatory requirements and ensure compliance with industry standards."
-    },
-    {
-      icon: <Sparkles />,
-      title: "Innovation Integration",
-      description: "Incorporate cutting-edge technologies and approaches into energy operations."
-    },
-    {
-      icon: <BookOpen />,
-      title: "Knowledge Sharing",
-      description: "Educational resources, workshops, and training for energy professionals."
+      title: "Regular updates on Regulatory reforms in the Industry",
+      description: "Monitoring and sharing the latest changes in energy sector regulations and policies."
     }
   ];
 

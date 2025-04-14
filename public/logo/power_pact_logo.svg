@@ -1,0 +1,15 @@
+
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <style>
+    .title { font: bold 24px sans-serif; fill: #0077cc; }
+    .tagline { font: 16px sans-serif; fill: #0077cc; }
+    .shape { stroke: #0077cc; stroke-width: 10; fill: none; }
+  </style>
+  <g transform="translate(150,80)">
+    <path class="shape" d="M -100 40 A 100 100 0 0 1 100 40" />
+    <path class="shape" d="M -60 40 L 0 -40 L 60 40" />
+    <path class="shape" d="M -30 10 A 30 30 0 0 1 30 10" />
+  </g>
+  <text class="title" x="150" y="150" text-anchor="middle">POWER PACT</text>
+  <text class="tagline" x="150" y="175" text-anchor="middle">Where power supply meets demand</text>
+</svg>
