@@ -41,9 +41,9 @@ const Header = () => {
     {/* Logo container with fully rounded shape and increased size */}
     <div className="h-[100px] lg:h-[120px] drop-shadow-md bg-transparent rounded-full p-2 flex items-center justify-center">
       <img 
-        src="/logo/b3b956da-7b11-489c-83ff-67c384ac9d7a_2-removebg-preview.png" 
+        src="/logo/Image_Apr_16__2025__12_41_14_PM-removebg-preview.png" 
         alt="PowerPact Logo" 
-        className="h-[125px] lg:h-[195px] w-auto object-contain filter drop-shadow-lg"
+        className="h-[150px] lg:h-[230px] w-auto object-contain filter drop-shadow-lg"
         style={{
           filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.3))"
         }}
