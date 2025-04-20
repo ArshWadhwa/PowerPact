@@ -127,8 +127,8 @@ const Hero = () => {
       <div className="container mx-auto px-3 sm:px-6 relative z-10">
         <div className="flex flex-col items-center text-center">
           <div className="flex items-center gap-2 mb-4 animate-fadeInUp">
-            <Zap className="text-secondary h-5 w-5 xs:h-6 xs:w-6" />
-            <span className="text-sm xs:text-base font-medium text-secondary">PowerPact</span>
+            {/* <Zap className="text-secondary h-5 w-5 xs:h-6 xs:w-6" /> */}
+            {/* <span className="text-sm xs:text-base font-medium text-secondary">PowerPact</span> */}
           </div>
           
           {/* Improved heading with better responsive font sizing */}

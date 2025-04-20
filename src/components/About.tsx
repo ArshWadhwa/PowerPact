@@ -58,6 +58,8 @@ const About = () => {
     <section id="about" ref={sectionRef} className="section-padding overflow-hidden bg-gray-50">
       <div className="container mx-auto px-3 sm:px-6">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+
+          
           {/* About Text Content */}
           <div className="lg:w-1/2 order-2 lg:order-1">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 animate-on-scroll">
