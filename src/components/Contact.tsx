@@ -27,7 +27,7 @@ const Contact = () => {
                   <Mail className="h-6 w-6" />
                 </div>
                 <div>
-                  <a href="mailto:info@powerpact.com" className="text-gray-600 text-xl hover:text-primary transition-colors block min-h-[44px] font-semibold mb-2 flex items-center">
+                  <a href="mailto:info@power-pact.com" className="text-gray-600 text-xl hover:text-primary transition-colors block min-h-[44px] font-semibold mb-2 flex items-center">
                     Email Us
                   </a>
                 </div>
